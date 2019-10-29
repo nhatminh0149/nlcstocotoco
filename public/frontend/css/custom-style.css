@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo|Nunito Sans");
+* {
+  box-sizing: border-box;
+}
+
+header,
+section {
+  overflow-x: hidden; 
+  /* ẩn nd ko nhìn thấy, tạo thanh trượt khi kéo chuột */
+}
+
+:root {
+  --Baloo: "Baloo", cursive;
+  --NunitoSans: "Nunito Sans", sans-serif;
+  --light-black: #2e2c2caf;
+  --bggradient: linear-gradient(to bottom, #e3eb7a, #757170);
+  --light-gray: rgba(255, 255, 255, 0.877);
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(16,29,44,.70), rgba(16,29,44,.70)),
+          url(/tocotoco/public/img/background/bg1.jpg) center no-repeat;
+    background-size: cover;
+}
+
+header .navbar-brand {
+    padding-left: 1rem;
+    flex: 1;
+}
+
+header a {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(245, 243, 243);
+}
+
+header .dropdown-content {
+  display: none;
+  position: absolute; /* của một phần tử liên quan đến vị trí của bố mẹ và thay đổi bố cục xung quanh vị trí đó. */
+  background-color: #f1f1f1;
+  min-width: 190px;
+  box-shadow: 0px 2px 15px 0px rgba(16,29,44,.70);
+  z-index: 1;
+}
+
+header .dropdown-content a {
+  color: rgb(252, 248, 248);
+  background-color: rgba(16,29,44,.70);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: #D3B673;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+header .nav-item {
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-around;
+  /* background-color: #ec2626;  */
+}
+
+header .nav-item:last-child {
+    padding-right: 0;
+}
+
+header .nav-link:hover {
+  color:#D3B673;
+}
+
+header .text-center{
+  padding: 20vmin 1vmin;
+}
+
+header .text-center h2{
+  font-weight: bold;
+  padding-bottom: 2vmin;
+  color:#D3B673;
+  font-family: 'Baloo', cursive;
+  font-size: 7vmin;
+}
+
+header .text-center h1{
+  font-weight: bold;
+  padding-bottom: 2vmin;
+  color: #f1f1f1;
+  font-family: 'Baloo', cursive;
+  font-size: 8vmin;
+}
+
+header .text-center p{
+  padding-bottom: 2vmin;
+  color: #f1f1f1;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 3vmin;
+}
+
+.text-center a.btnToco{
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #D3B673;
+  position: relative;
+  color: whitesmoke;
+  background: #D3B673;
+  text-decoration: none;
+}
+.text-center a.btnToco:hover{
+  background: rgba(16,29,44,.70);
+  color: #D3B673;
+}
+
+/* main */
+
+  /*  section 1 - about  */
+section{
+  padding: 60px 0;
+}
+
+.section-heading h4{
+  color: #D3B673;
+  line-height: 0;
+  font-family: 'Baloo', cursive;
+  letter-spacing: 1px;
+  padding-bottom: 2vmin;
+}
+
+.section-heading h1{
+  font-family: 'Baloo', cursive;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.about .btn{
+  width: 150px;
+  color: whitesmoke;
+  transition: background-color 650ms;
+  background:  #D3B673;
+}
+
+.about .btn:hover{
+  color:   #D3B673;
+  background-color:rgba(16,29,44,.80);
+  font-weight: bold;
+}
+  /*  End section 1 - about  */
+
+  /*  section 2 - menu  */
+.menu{
+  background: rgba(16,29,44,.80);
+}
+.menu .row .shop-info i{
+  color: #D3B673;
+  font-size: 60px;
+}
+.menu .row .shop-info p{
+  color: rgba(255,255,255,.5);
+}
+
+  /*  End section 2 - menu  */
+
+  /* Section 3 - list product */
+.list-title{
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+.card{
+  margin: 10px;
+  width: 255px;
+}
+
+.card-title{
+  font: 23px Muli, Arial;
+  height: 50px;
+  font-weight: bold;
+}
+
+a.btnToco{ 
+  width: 150px;
+  line-height: 35px;
+  text-align: center;
+  margin: 20px auto;
+  border: 1px solid #D3B673;
+  color: #fff;
+  background: #D3B673;
+  text-decoration: none;
+}
+.row a.btnToco:hover{ 
+  background: white;
+  color: #FFC125;
+}
+.price{
+  color: #D3B673;
+  font: 20px Muli, Georgia;
+  font-weight: bold;
+}
+  /* End Section 3 - list product */
+
+/* end main */
+
+
+/* footer */
+footer{
+  background: linear-gradient(rgba(16,29,44,.90), rgba(16,29,44,.90)),
+          url(/tocotoco/public/img/background/footer.jpg) center no-repeat;
+  background-size: cover;
+  color: #d3b673;
+}
+
+/* end footer */
+@media only screen and (max-width: 768px) {
+  header .navbar-brand {
+    padding-left: 1rem;
+  }
+}
