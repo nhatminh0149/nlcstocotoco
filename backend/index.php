@@ -32,7 +32,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
         </div>
         <div class="right-panel">
           <a>  Xin chào Admin </a>&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-heart" aria-hidden="true"></i> <a href="../index.php" style="color: rgb(252, 222, 152); text-decoration: none;">Trang chủ</a>&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-heart" aria-hidden="true"></i> <a href="" style="color: rgb(252, 222, 152); text-decoration: none;">Trang chủ</a>&nbsp;&nbsp;&nbsp;
           <i class="fa fa-sign-out" aria-hidden="true"></i> <a href="dangxuat.php"  style="color: rgb(252, 222, 152); text-decoration: none;">Đăng xuất</a>
         </div>
       </div>
@@ -41,10 +41,10 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
 
 <!-- Main-->
 
-  <div id="content-wrapper">
+  <div id="content-wrapper" style="background: whitesmoke;">
     <div class="container">
-      <div class="row mt-3">
-        <div class="col-md-3 col-sm-6 col-12 mt-4">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-12 mt-5 mb-5">
           <!-- <div class="left-menu mt-3"> -->
             <div class="menu-heading"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;Danh mục quản lý</div>
             <div class="menu-items">
@@ -58,7 +58,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
             </div>
           <!-- </div> -->
         </div>
-        <div class="col-md-9 col-sm-6 col-12 mt-4">
+        <div class="col-md-9 col-sm-6 col-12 mt-5 mb-5" style="min-height: 500px;">
           <!-- <div class="main-content"> -->
             <?php
               //tạo biến page, nếu tồn tại biến page thì hiện page, nếu chưa có thì xuất hiện trang danh sách sản phẩm
@@ -135,7 +135,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
   <div class="clear-both"></div>
 
 <!-- Footer -->
-<footer class="page-footer font-small mdb-color mt-4" style="background:  rgba(16,29,44,.90); color: #d3b673; padding: 10px 0 0 0;">
+<footer class="page-footer font-small mdb-color" style="background:  rgba(16,29,44,.90); color: #d3b673; padding: 10px 0 0 0;">
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
  

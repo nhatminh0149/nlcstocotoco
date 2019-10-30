@@ -21,7 +21,7 @@ EOT;
     //  print_r($data);
     // die;
 ?>
-<h3 style="background: rgba(16,29,44,.70); color: rgb(252, 222, 152); margin-bottom: -1px; text-align: center; border: 1px solid #ccc; padding: 10px">Danh sách Sản phẩm</h3>
+<h4 style="background: rgba(16,29,44,.70); color: rgb(252, 222, 152); margin-bottom: -1px; text-align: center; border: 1px solid #ccc; padding: 10px">DANH SÁCH SẢN PHẨM</h4>
 <table class="table table-bordered table-hover table-responsive">
     <thead>
         <tr>

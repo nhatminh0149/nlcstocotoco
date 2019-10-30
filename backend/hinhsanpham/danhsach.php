@@ -7,9 +7,9 @@
     <title>Document</title>
 
     <style>
-.img-thumbnail {
-    width: 70px;
-    height: 70px;
+.img {
+    width: 90px;
+    height: 90px;
 }
 </style>
 
@@ -37,7 +37,7 @@ EOT;
     /* print_r($data);
     die;*/
 ?>
-
+<h4 style="background: rgba(16,29,44,.70); color: rgb(252, 222, 152); margin-bottom: -1px; text-align: center; border: 1px solid #ccc; padding: 10px">DANH SÁCH HÌNH SẢN PHẨM</h4>
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -54,7 +54,7 @@ EOT;
             <td> <?php echo $row['hsp_ma']; ?></td>
             <td> <?php echo $row['sp_ten']; ?></td>
             <td> <?php echo $row['sp_gia']; ?></td>
-            <td style="text-align: center;"><img src="/nlcstocotoco/public/uploads/<?= $row['hsp_tentaptin']; ?>" class="img-thumbnail" /></td>
+            <td style="text-align: center;"><img src="/nlcstocotoco/public/uploads/<?= $row['hsp_tentaptin']; ?>" class="img" /></td>
            
 
             <!-- Truyền dữ liệu GET trên URL, theo dạng ?KEY1=VALUE1&KEY2=VALUE2 -->

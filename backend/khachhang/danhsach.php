@@ -21,7 +21,7 @@ EOT;
     //  print_r($data);
     // die;
 ?>
-<h3 style="background: rgba(16,29,44,.70); color: rgb(252, 222, 152); margin-bottom: -1px; text-align: center; border: 1px solid #ccc; padding: 10px">Danh sách Khách Hàng</h3>
+<h4 style="background: rgba(16,29,44,.70); color: rgb(252, 222, 152); margin-bottom: -1px; text-align: center; border: 1px solid #ccc; padding: 10px">DANH SÁCH KHÁCH HÀNG</h4>
 <table class="table table-bordered table-hover table-responsive">
     <thead>
         <tr>
@@ -39,7 +39,7 @@ EOT;
         <?php foreach($data as $row) : ?>
         <tr>
             <td><?= $row['kh_taikhoan'] ?></td>
-            <td><?= $row['kh_mk'] ?></td>
+            <td><?= sha1($row['kh_mk']) ?></td>
             <td><?= $row['kh_hoten'] ?></td>
             <td><?= $row['kh_sdt'] ?></td>
             <td><?= $row['kh_diachi'] ?></td>

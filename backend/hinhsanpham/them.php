@@ -17,7 +17,7 @@ EOT;
      /*print_r($data);
     die;*/
 ?>
-
+<h1>Thêm mới Hình Sản Phẩm</h1>
 <form id="themhsp" name="themhsp" method="post" action="" enctype="multipart/form-data">
     Chọn hình cho sản phẩm <input type="file" id="hsp_tentaptin" name="hsp_tentaptin" class="form-control"><br><br>
 

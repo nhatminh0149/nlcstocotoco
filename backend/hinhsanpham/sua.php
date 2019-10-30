@@ -26,12 +26,13 @@ EOT;
         // print_r($loaisanphamRow);
     ?>
 
-    <form id="suahsp" name="suahsp" method="post" action="">
-        Mã hình sản phẩm:   <input type="text" id="hsp_ma" name="hsp_ma" readonly value="<?= $hinhsanphamRow['hsp_ma']?>" class="form-control"/><br><br>
-        Tên sản phẩm:       <input type="text" id="sp_ten" name="sp_ten" readonly value="<?= $hinhsanphamRow['sp_ten'] ?>" class="form-control"/><br><br>
-        Giá sản phẩm:     <input type="text" id="sp_gia" name="sp_gia" readonly value="<?= $hinhsanphamRow['sp_gia'] ?>"class="form-control" /><br><br>
-        Hình sản phẩm       <input type="file" id="hsp_tentaptin" name="hsp_tentaptin" value="<?= $hinhsanphamRow['hsp_tentaptin'] ?>"class="form-control" /><br><br>                     
-                            <input type="submit" name="sua" id="sua" value="Cập nhật hình sản phẩm" class="btn btn-outline-secondary"/>
+    <form id="suahsp" name="suahsp" method="post" action="" enctype="multipart/form-data">
+        Mã hình sản phẩm: <input type="text" id="hsp_ma" name="hsp_ma" readonly value="<?= $hinhsanphamRow['hsp_ma']?>" class="form-control"/><br><br>
+        Tên sản phẩm:     <input type="text" id="sp_ten" name="sp_ten" readonly value="<?= $hinhsanphamRow['sp_ten'] ?>" class="form-control"/><br><br>
+        Giá sản phẩm:     <input type="text" id="sp_gia" name="sp_gia" readonly value="<?= $hinhsanphamRow['sp_gia'] ?>"class="form-control" /><br><br>   
+        Ảnh sản phẩm:     <img src="/nlcstocotoco/public/uploads/<?php echo $hinhsanphamRow['hsp_tentaptin'] ?>" style="max-width: 200px;"><br><br>
+        Chọn ảnh mới:     <input type="file" name="hsp_tentaptin"><br><br>
+        <button class="btn btn-outline-secondary" name="sua">Sửa hình ảnh</button>    
     </form>
 
     <?php
