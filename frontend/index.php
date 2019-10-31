@@ -121,7 +121,6 @@
         <!-- End section 2 - menu -->
 
         <!--  Section 3 -->
-
         <section class="product">
             <div class="container">
                 <div class="row"> 
@@ -184,6 +183,7 @@
                 </div>
             </div>
         </section> 
+        <!-- End Section 3 - Product -->
     </main>
     <!-- End Main -->
 
