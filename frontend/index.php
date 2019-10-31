@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Trang chủ</title>
     <link rel="stylesheet" href="./../public/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="./../public/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/nlcstocotoco/frontend/css/style.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     
 </head>
 <body>
@@ -27,7 +28,7 @@
                         <a class="nav-link" href="/nlcstocotoco/frontend/index.php">TRANG CHỦ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">SẢN PHẨM</a>
+                        <a class="nav-link" href="sanpham.php">SẢN PHẨM</a>
                     </li>
                 
                     <li class="nav-item" style="margin-left: 20px;">
@@ -51,10 +52,10 @@
         </nav>
 
         <div class="text-center" style="margin-top: 50px;">
-            <h2>ToCoToCo Tea</h2>
-            <h1>TRÀ SỮA CỦA HẠNH PHÚC</h1>
-            <p>Với sứ mệnh mang tới niềm vui và hạnh phúc, TocoToco hy vọng sẽ tạo nên một nét văn hóa <br> giải trí bên cạnh ly trà sữa Ngon – sạch – tươi.</p>
-            <a href="#" class="btnToco">MUA NGAY THÔI</a>
+            <h2 class="animated slideInDown">ToCoToCo Tea</h2>
+            <h1 class="animated slideInLeft">TRÀ SỮA CỦA HẠNH PHÚC</h1>
+            <p class="animated slideInRight">Với sứ mệnh mang tới niềm vui và hạnh phúc, TocoToco hy vọng sẽ tạo nên một nét văn hóa <br> giải trí bên cạnh ly trà sữa Ngon – sạch – tươi.</p>
+            <a href="sanpham.php" class="btnToco">MUA NGAY THÔI</a>
         </div>
     </header>
 <!-- End Header -->
@@ -176,9 +177,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin-bottom: -50px;"> 
+                <div class="row" style="margin-bottom: -10px;"> 
                     <div class="text-center">
-                        <a href="#" class="btnToco">XEM TẤT CẢ</a>
+                        <a href="sanpham.php" class="btnToco">XEM TẤT CẢ</a>
                     </div>
                 </div>
             </div>

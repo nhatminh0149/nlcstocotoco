@@ -84,7 +84,8 @@ section{
 .about .section-heading p{
     font-family: 'Muli', sans-serif;
     color: black;
-    font-weight: 14px;
+    font-weight: bold;
+    font-size: 20px;
 }
     /* section-2-menu */
 .menu{

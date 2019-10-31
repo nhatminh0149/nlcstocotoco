@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo|Nunito Sans|Muli");
+* {
+  box-sizing: border-box;
+}
+
+/* header */
+header {
+    height: 300px;
+    padding: 30px 0;
+    background: linear-gradient(rgba(16,29,44,.60), rgba(16,29,44,.60)), url(/nlcstocotoco/public/img/background/bg4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+header a {
+    font-family: 'Muli', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+}
+header a:hover {
+    font-size: 1em;
+    color: rgb(231, 216, 76);
+}
+
+/* Sidebar */
+#content-wrapper .menu-heading{
+    text-align: center;
+    color:#D3B673;
+    font-family: 'Baloo', cursive;
+    font-size: 30px;
+}
+#content-wrapper .menu-heading:hover{
+    font-size: 32px;
+}
+#content-wrapper .menu-items{
+    text-align: center;
+}
+#content-wrapper .menu-items ul{
+    list-style: none;
+}
+#content-wrapper .menu-items ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#content-wrapper .menu-items ul li{
+   line-height: 50px;
+}
+#content-wrapper .menu-items ul li a{
+   text-decoration: none;
+   font-family: 'Muli', sans-serif;
+   color: black;
+   font-weight: bold;
+}
+#content-wrapper .menu-items ul li a:hover{
+    font-size: 20px;
+    font-family: 'Muli', sans-serif;
+}
+  
+
+
+  

@@ -45,7 +45,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-6 col-12 mt-5 mb-5">
-          <!-- <div class="left-menu mt-3"> -->
             <div class="menu-heading"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;Danh mục quản lý</div>
             <div class="menu-items">
               <ul>
@@ -56,7 +55,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
                 <li><a href="?page=dondathang_danhsach"><i class="fa fa-wpforms" aria-hidden="true"></i>&nbsp; Đơn đặt hàng</a></li>
               </ul>
             </div>
-          <!-- </div> -->
         </div>
         <div class="col-md-9 col-sm-6 col-12 mt-5 mb-5" style="min-height: 500px;">
           <!-- <div class="main-content"> -->
