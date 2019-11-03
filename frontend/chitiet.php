@@ -175,8 +175,8 @@ EOT;
                             <p class="product-price"><?php echo $sanphamRow['sp_gia_formated'] ?></p>
                             <p class="product-mota"><?php echo $sanphamRow['sp_mota'] ?></p>
                             <div class="form-group">
-                                <p class="soluong">Số lượng:</p>
-                                <input type="number" id="qty" name="qty" min="1">
+                                <!-- <p class="soluong">Số lượng:</p>
+                                <input type="number" id="qty" name="qty" min="1"> -->
                                 <br><br>
                                 <a href="xulygiohang.php?sp_ma=<?= $sanphamRow['sp_ma'] ?>" class="btnAdd" id="btnAdd"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 23px;"></i>&nbsp; Thêm vào giỏ hàng</a>
                             </div>

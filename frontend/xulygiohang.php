@@ -63,6 +63,7 @@
         $sql= "select * from `sanpham` where sp_ma = $sp_ma;";
         $result=mysqli_query($conn,$sql);
         $product = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        // echo "<pre />";
         // print_r($product);
         // die;
         if(isset($_SESSION['cart'])){
@@ -73,6 +74,7 @@
             else{
                 $_SESSION['cart'][$sp_ma]['qty'] = 1;
             }
+            $_SESSION['cart'][$sp_ma]['lsp_ten'] = $product['lsp_ten'];
             $_SESSION['cart'][$sp_ma]['sp_ten'] = $product['sp_ten'];
             $_SESSION['cart'][$sp_ma]['sp_gia'] = $product['sp_gia'];
             $_SESSION['success'] = 'Tồn tại giỏ hàng! Cập nhật thành công';
@@ -82,6 +84,7 @@
         else{
             //var_dump("Chua ton tai");
             $_SESSION['cart'][$sp_ma]['qty'] = 1;
+            $_SESSION['cart'][$sp_ma]['lsp_ten'] = $product['lsp_ten'];
             $_SESSION['cart'][$sp_ma]['sp_ten'] = $product['sp_ten'];
             $_SESSION['cart'][$sp_ma]['sp_gia'] = $product['sp_gia'];
             $_SESSION['success'] = 'Tạo mới giỏ hàng thành công';
