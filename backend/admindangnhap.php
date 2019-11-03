@@ -99,7 +99,7 @@
 			}
 			else{
 				echo '<script>
-					alert("Bạn đã nhập sai tài khoản hoặc mật khẩu. Bạn phải đăng nhập ĐÚNG tài khoản và mật khẩu của Admin!!!");
+					alert("Bạn đã nhập sai Tài khoản hoặc Mật khẩu. Bạn phải đăng nhập ĐÚNG tài khoản và mật khẩu của Admin!!!");
 					window.location= "admindangnhap.php" ;
 				</script>'; 
 			}

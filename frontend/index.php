@@ -39,13 +39,13 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 25px;"></i></a>
+                        <a class="nav-link" href="danhsachgiohang.php"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 25px;"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
+                        <a class="nav-link" href="khachhangdangky.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>
+                        <a class="nav-link" href="khachhangdangxuat.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +54,7 @@
         <div class="text-center" style="margin-top: 50px;">
             <h2 class="animated slideInDown">ToCoToCo Tea</h2>
             <h1 class="animated slideInLeft">TRÀ SỮA CỦA HẠNH PHÚC</h1>
-            <p class="animated slideInRight">Với sứ mệnh mang tới niềm vui và hạnh phúc, TocoToco hy vọng sẽ tạo nên một nét văn hóa <br> giải trí bên cạnh ly trà sữa Ngon – sạch – tươi.</p>
+            <p class="animated slideInRight">Với sứ mệnh mang tới niềm vui và hạnh phúc, ToCoToCo hy vọng sẽ tạo nên một nét văn hóa <br> giải trí bên cạnh ly trà sữa Ngon – sạch – tươi.</p>
             <a href="sanpham.php" class="btnToco">MUA NGAY THÔI</a>
         </div>
     </header>

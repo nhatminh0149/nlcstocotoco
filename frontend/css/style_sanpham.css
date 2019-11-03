@@ -58,7 +58,16 @@ header a:hover {
     font-size: 20px;
     font-family: 'Muli', sans-serif;
 }
-  
+
+/* footer */
+footer{
+    background: linear-gradient(rgba(16,29,44,.60), rgba(16,29,44,.60)), url(/nlcstocotoco/public/img/background/footer.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
 
 
   

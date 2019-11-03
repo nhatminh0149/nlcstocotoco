@@ -89,7 +89,7 @@ section{
 }
     /* section-2-menu */
 .menu{
-    background: linear-gradient(rgba(16,29,44,.70), rgba(16,29,44,.70)),
+    background: linear-gradient(rgba(23, 23, 24, 0.75), rgba(30, 30, 31, 0.75)),
     url(/nlcstocotoco/public/img/background/bg5.jpg) center no-repeat;
 }
 .menu .list-title{
@@ -237,8 +237,8 @@ section{
 
 /* footer */
 footer{
-    background: linear-gradient(rgba(16,29,44,.85), rgba(16,29,44,.85)),
-            url(/tocotoco/public/img/background/footer.jpg) center no-repeat;
+    background: linear-gradient(rgba(23, 23, 24, 0.85), rgba(30, 30, 31, 0.85)),
+            url(/nlcstocotoco/public/img/background/footer.jpg) center no-repeat;
     background-size: cover;
     color: #d3b673;
     font-family: 'Muli', sans-serif;
