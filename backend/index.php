@@ -32,7 +32,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
         </div>
         <div class="right-panel">
           <a>  Xin chào Admin </a>&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-heart" aria-hidden="true"></i> <a href="" style="color: rgb(252, 222, 152); text-decoration: none;">Trang chủ</a>&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-heart" aria-hidden="true"></i> <a href="/nlcstocotoco/frontend/index.php" style="color: rgb(252, 222, 152); text-decoration: none;">Trang chủ</a>&nbsp;&nbsp;&nbsp;
           <i class="fa fa-sign-out" aria-hidden="true"></i> <a href="dangxuat.php"  style="color: rgb(252, 222, 152); text-decoration: none;">Đăng xuất</a>
         </div>
       </div>

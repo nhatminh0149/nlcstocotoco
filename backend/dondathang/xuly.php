@@ -49,7 +49,7 @@ while($row = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC))
             <input type="text" id="ddh_noigiao" name="ddh_noigiao" readonly value="<?= $dondathangRow['ddh_noigiao']?>" class="form-control"/><br><br>
         </div>
 
-       <button class="btn btn-outline-secondary" name="btnCapNhat">Duyệt đơn hàng</button>
+       <button class="btn btn-outline-secondary" name="btnCapNhat"><i class="fa fa-pencil" aria-hidden="true"></i> Duyệt đơn hàng</button>
 </form>
 
 <?php

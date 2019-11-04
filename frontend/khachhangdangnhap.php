@@ -82,6 +82,7 @@
 		if(isset($_POST["btnDangNhapKH"])){
             $kh_taikhoan = trim($_POST["kh_taikhoan"]);
             $kh_mk = trim($_POST["kh_mk"]);
+
             if(!$kh_taikhoan || !$kh_mk){
                 echo '<script>
                     alert("Khách hàng hãy nhập đầy đủ Tài khoản và Mật khẩu nhé!!!");

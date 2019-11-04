@@ -1,3 +1,6 @@
+<?php
+    require_once __DIR__ . '/../dbconnect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +10,7 @@
     <title>Trang chủ</title>
     <link rel="stylesheet" href="./../public/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="./../public/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="/nlcstocotoco/public/vendor/animate/animate.css"> -->
     <link rel="stylesheet" type="text/css" href="/nlcstocotoco/frontend/css/style.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     
@@ -18,6 +22,17 @@
             <a class="navbar-brand" href="#" style="margin-left: 45px;">
                 <img src="/nlcstocotoco/public/img/thuonghieu/logo.jpg" width="200" height="50"  alt="thuonghieu">
             </a>
+            <?php
+                    if(isset($_SESSION['kh_taikhoan']) && $_SESSION['kh_taikhoan'] !=""){
+            ?>
+                <a href="#" style="color:#FFF"><i class="fa fa-heartbeat" aria-hidden="true"></i> Hi! 
+            <?php
+                echo $_SESSION['kh_taikhoan'];
+            ?>
+            </a>
+            <?php
+                }
+            ?>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,7 +57,7 @@
                         <a class="nav-link" href="danhsachgiohang.php"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 25px;"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="khachhangdangky.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
+                        <a class="nav-link" href="khachhangdangnhap.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="khachhangdangxuat.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>

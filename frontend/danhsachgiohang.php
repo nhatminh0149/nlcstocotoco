@@ -31,25 +31,22 @@
             font-size: 15px;
             font-weight: bold;
         }
-        .InputButton{
-            line-height: 40px;
-        }
-        a.InputButton{
-            width: 150px;
-            padding: 10px;
+        input[type="submit"]{
+            width: 200px;
+            padding: 5px;
             border: 1px solid #D3B673;
             color: whitesmoke;
             background: rgb(204, 171, 95);
             text-decoration: none;
             font-family: 'Muli', sans-serif;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
         }
-        a.InputButton:hover{
+        input[type="submit"]:hover{
             background: black;
             color: rgb(224, 186, 97);
             font-family: 'Muli', sans-serif;
-            font-size: 16px;
+            font-size: 14px;
         }
         h4{
             font-family: 'Muli', sans-serif;
@@ -64,6 +61,17 @@
             <a class="navbar-brand" href="#" style="margin-left: 45px;">
                 <img src="/nlcstocotoco/public/img/thuonghieu/logo.jpg" width="200" height="50"  alt="thuonghieu">
             </a>
+            <?php
+                    if(isset($_SESSION['kh_taikhoan']) && $_SESSION['kh_taikhoan'] !=""){
+            ?>
+                <a href="#" style="color:#FFF"><i class="fa fa-heartbeat" aria-hidden="true"></i> Hi! 
+            <?php
+                echo $_SESSION['kh_taikhoan'];
+            ?>
+            </a>
+            <?php
+                }
+            ?>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -88,7 +96,7 @@
                         <a class="nav-link" href="/nlcstocotoco/frontend/danhsachgiohang.php"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 25px;"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/nlcstocotoco/frontend/khachhangdangky.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
+                        <a class="nav-link" href="/nlcstocotoco/frontend/khachhangdangnhap.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/nlcstocotoco/frontend/khachhangdangxuat.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>
@@ -103,20 +111,23 @@
     <div class="container mt-5">
         <form id="form1" name="form1" method="post" action="">
             <div class="row">
-                <div class="col-sm-4"><label>Tên sản phẩm</label></div>
+                <div class="col-sm-2"><label>Tên sản phẩm</label></div>
+                <div class="col-sm-2"><label>Hình sản phẩm</label></div>
                 <div class="col-sm-2"><label>Giá</label></div>
                 <div class="col-sm-2"><label>Số lượng</label></div>
                 <div class="col-sm-2"><label>Thành tiền</label></div>
-                <div class="col-sm-2"><label>Chức năng</label></div>
+                <div class="col-sm-2"><label>Chức năng</label></div>             
             </div>
 
             <?php 
                 if(isset($_SESSION['cart'])){
+                    // print_r($_SESSION['cart']);
                     $tong = 0;
                     foreach($_SESSION['cart'] as $key => $val){
             ?>              
                         <div class="row">
-                            <div class="col-md-4"><?php echo $val['sp_ten'] ?></div>
+                            <div class="col-md-2"><?php echo $val['sp_ten'] ?></div>
+                            <div class="col-md-2"><img src="/nlcstocotoco/public/uploads/<?= $val['hsp_tentaptin'] ?>" class="img" height="40px" width="40px;" /></div>
                             <div class="col-md-2"><?php echo number_format($val['sp_gia'],2,",",".") ?></div>   
                             <div class="col-md-2"><input type='number' name='SP<?php echo $key ?>' value='<?php echo $val['qty'] ?>' style='text-align: center; width: 50px;' min="1"; /></div>   
                             <div class="col-md-2"><?php echo number_format($val['sp_gia'] * $val['qty'],2,",",".")?></div>   
@@ -139,8 +150,7 @@
                         ?>
                 <div class='row'>
                     <div class='col-md-12' style='text-align: right; padding: 30px 50px 30px 0;'>
-                        <!-- <input type="submit" value="Đồng ý và thanh toán" name="btnDongY" id="btnXoa" class="InputButton"/> -->
-                        <a href="#" class="InputButton" id="btnDongY" name="btnDongY"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp; Đồng ý và thanh toán</a>
+                        <input type="submit" value="Đồng ý và thanh toán" name="btnDongY" id="btnDongY" class="InputButton"/>
                     </div>
                 </div>
         </form>
@@ -169,6 +179,16 @@
     }
 
     if(isset($_POST['btnDongY'])){
-        
+        if(isset($_SESSION['kh_taikhoan'])){
+            foreach($_SESSION['cart'] as $key => $row){
+                $_SESSION['cart'][$key]['qty']=$_POST['SP'.$key];
+            }
+            echo "<script>window.location='thanhtoan.php'</script>";
+        }
+        else{
+            echo "<script> alert('Bạn vui lòng đăng nhập trước khi thanh toán nhé!!!');
+                            window.location= 'khachhangdangnhap.php' ;
+                </script>";
+        }
     }
 ?>

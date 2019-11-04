@@ -9,7 +9,7 @@
 <body>
     <h1>Cập nhật Hình Sản Phẩm</h1>
 
-    <?php
+    <?php ob_start();
 //         $hsp_ma=$_GET['hsp_ma'];
 //         //echo 'Đang sửa khóa chính là: ' . $hsp_ma;
 
@@ -103,6 +103,7 @@
                 $sql = "UPDATE `hinhsanpham` SET hsp_tentaptin='$hsp_tentaptin', sp_ma=$sp_ma WHERE hsp_ma=$hsp_ma;";
                 mysqli_query($conn, $sql);
                 header('location:/nlcstocotoco/backend/index.php?page=hinhsanpham_danhsach');
+                ob_enf_fluch();
         }
     }
     ?>
