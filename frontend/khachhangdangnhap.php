@@ -80,8 +80,15 @@
 	
 	<?php
 		if(isset($_POST["btnDangNhapKH"])){
+            // print_r($_POST["kh_mk"]);
+            // print_r("them ham trim()");
+            // print_r(trim($_POST["kh_mk"]));
+            // print_r("them ham md5(trim())");
+            // print_r(md5(trim($_POST["kh_mk"])));
+            // die;
+
             $kh_taikhoan = trim($_POST["kh_taikhoan"]);
-            $kh_mk = trim($_POST["kh_mk"]);
+            $kh_mk = md5(trim($_POST["kh_mk"]));
 
             if(!$kh_taikhoan || !$kh_mk){
                 echo '<script>
@@ -91,10 +98,12 @@
             }
             else
             {
-                $kh_taikhoan = mysqli_real_escape_string($conn, $kh_taikhoan);
-                $kh_mk = mysqli_real_escape_string($conn, $kh_mk);
-
-                $result = mysqli_query($conn, "SELECT * FROM khachhang WHERE kh_taikhoan = '$kh_taikhoan' AND kh_mk = '$kh_mk' ") or die(mysql_error());
+                //$kh_taikhoan = mysqli_real_escape_string($conn, $kh_taikhoan);
+                //$kh_mk = mysqli_real_escape_string($conn, $kh_mk);
+                $sqlQuery = "SELECT * FROM khachhang WHERE kh_taikhoan = '$kh_taikhoan' AND kh_mk = '$kh_mk' ";
+                // print_r($sqlQuery);
+                // die;
+                $result = mysqli_query($conn, $sqlQuery) or die(mysql_error());
                 if(mysqli_num_rows($result) > 0){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     $_SESSION["kh_taikhoan"] = $kh_taikhoan;

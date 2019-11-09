@@ -64,7 +64,7 @@
 	</head>
 	<body>
 		<div>
-			<form method="POST">
+			<form name="khdk" id="khdk" method="POST">
 				<h2><center>KHÁCH HÀNG ĐĂNG KÝ TÀI KHOẢN</center></h2>
 				<table>
 					<tr>
@@ -82,7 +82,7 @@
                     <tr>
 						<td>Gõ lại mật khẩu: </td>
 						<td>
-							<input type="password" name="repasskh"/>
+							<input type="password" name="re_khmk"/>
 						</td>
 					</tr>
 					<tr>
@@ -120,16 +120,25 @@
 
         if(isset($_POST['submitDK'])){
             $kh_taikhoan=$_POST['kh_taikhoan'];
-            $kh_mk= $_POST['kh_mk'];
+            $kh_mk= md5($_POST['kh_mk']);
             $kh_hoten=$_POST['kh_hoten'];
             $kh_sdt=$_POST['kh_sdt'];
             $kh_diachi=$_POST['kh_diachi'];
-            $kh_email=$_POST['kh_email'];
-    
-            $sqlInsert = "INSERT INTO khachhang(kh_taikhoan, kh_mk, kh_hoten, kh_sdt, kh_diachi, kh_email) VALUES (N'$kh_taikhoan', N'$kh_mk', N'$kh_hoten', N'$kh_sdt', N'$kh_diachi', N'$kh_email');";
-            $resultInsert = mysqli_query($conn, $sqlInsert);
-            print_r($resultInsert);
-            header('location:/nlcstocotoco/frontend/khachhangdangnhap.php');
+			$kh_email=$_POST['kh_email'];
+			
+			if($_POST['kh_taikhoan']=="" || $_POST['kh_mk']=="" || $_POST['re_khmk']=="" || $_POST['kh_hoten']=="" || $_POST['kh_sdt']=="" || $_POST['kh_diachi']=="" || $_POST['kh_email']==""){
+				echo '<script>
+                		alert("Vui lòng nhập đầy đủ thông tin có dấu!!!");
+                		window.location= "khachhangdangky.php" ;
+           			 </script>';
+			}
+			else{
+				$sqlInsert = "INSERT INTO khachhang(kh_taikhoan, kh_mk, kh_hoten, kh_sdt, kh_diachi, kh_email) VALUES (N'$kh_taikhoan', N'$kh_mk', N'$kh_hoten', N'$kh_sdt', N'$kh_diachi', N'$kh_email');";
+				$resultInsert = mysqli_query($conn, $sqlInsert);
+				print_r($resultInsert);
+				header('location:/nlcstocotoco/frontend/khachhangdangnhap.php');
+
+			}      
         }
 	
 	?>

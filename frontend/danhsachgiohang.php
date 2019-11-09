@@ -86,9 +86,9 @@
                     </li>
                 
                     <li class="nav-item" style="margin-left: 20px;">
-                        <form class="form-inline my-2 my-lg-0" method="get" action="#">
-                            <input class="form-control mr-sm-1" type="search" placeholder="Tìm kiếm" aria-label="Search" name="">
-                            <button class="btn btn-warning mr-sm-5"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <form class="form-inline my-2 my-lg-0" method="get" action="#">
+                            <input class="form-control mr-sm-1" type="search" placeholder="Tìm kiếm" aria-label="Search" name="" id="searchKey">
+                            <button type="button" class="btn btn-warning mr-sm-5" id="timkiem" name="timkiem"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
                     </li>
 
@@ -111,27 +111,39 @@
     <div class="container mt-5">
         <form id="form1" name="form1" method="post" action="">
             <div class="row">
-                <div class="col-sm-2"><label>Tên sản phẩm</label></div>
-                <div class="col-sm-2"><label>Hình sản phẩm</label></div>
-                <div class="col-sm-2"><label>Giá</label></div>
-                <div class="col-sm-2"><label>Số lượng</label></div>
-                <div class="col-sm-2"><label>Thành tiền</label></div>
-                <div class="col-sm-2"><label>Chức năng</label></div>             
+                <div class="col-sm-2 text-center"><label>Tên sản phẩm</label></div>
+                <div class="col-sm-2 text-center"><label>Hình sản phẩm</label></div>
+                <div class="col-sm-2 text-center"><label>Giá</label></div>
+                <div class="col-sm-2 text-center"><label>Số lượng</label></div>
+                <div class="col-sm-2 text-center"><label>Thành tiền</label></div>
+                <div class="col-sm-2 text-center"><label>Chức năng</label></div>             
             </div>
 
             <?php 
                 if(isset($_SESSION['cart'])){
                     // print_r($_SESSION['cart']);
+                    // die;
                     $tong = 0;
                     foreach($_SESSION['cart'] as $key => $val){
             ?>              
                         <div class="row">
-                            <div class="col-md-2"><?php echo $val['sp_ten'] ?></div>
-                            <div class="col-md-2"><img src="/nlcstocotoco/public/uploads/<?= $val['hsp_tentaptin'] ?>" class="img" height="40px" width="40px;" /></div>
-                            <div class="col-md-2"><?php echo number_format($val['sp_gia'],2,",",".") ?></div>   
-                            <div class="col-md-2"><input type='number' name='SP<?php echo $key ?>' value='<?php echo $val['qty'] ?>' style='text-align: center; width: 50px;' min="1"; /></div>   
-                            <div class="col-md-2"><?php echo number_format($val['sp_gia'] * $val['qty'],2,",",".")?></div>   
-                            <div class="col-md-2"><a onclick='return confirmDelete()' href="/nlcstocotoco/frontend/danhsachgiohang.php?sp_ma=<?php echo $key ?>&action=xoa"><i class="fa fa-trash-o" aria-hidden="true"></i></a></div> 
+                            <div class="col-md-2 text-center"><?php echo $val['sp_ten'] ?></div>
+                            <div class="col-md-2 text-center">
+                                <?php if ( $val['hsp_tentaptin'] ): ?>
+                                        <img src="/nlcstocotoco/public/uploads/<?= $val['hsp_tentaptin'] ?>" class="img" height="40px" width="40px;" />
+                                <?php else: ?>
+                                        <img class="img" src="/nlcstocotoco/public/img/no_image.jpg" width="40px" height="40px" />
+                                <?php endif ?>
+                                
+                                
+                                
+                               
+                                
+                            </div>
+                            <div class="col-md-2 text-center"><?php echo number_format($val['sp_gia'],2,",",".") ?></div>   
+                            <div class="col-md-2 text-center"><input type='number' name='SP<?php echo $key ?>' readonly value='<?php echo $val['qty'] ?>' style='text-align: center; width: 50px;' min="1"; /></div>   
+                            <div class="col-md-2 text-center"><?php echo number_format($val['sp_gia'] * $val['qty'],2,",",".")?></div>   
+                            <div class="col-md-2 text-center"><a onclick='return confirmDelete()' href="/nlcstocotoco/frontend/danhsachgiohang.php?sp_ma=<?php echo $key ?>&action=xoa"><i class="fa fa-trash-o" aria-hidden="true"></i></a></div> 
                         </div>
                         <?php $tong += $val['sp_gia'] * $val['qty']; 
                     }
@@ -154,7 +166,22 @@
                     </div>
                 </div>
         </form>
-    </div> 
+    </div>
+
+     <script src="./../public/vendor/jquery/jquery.min.js"></script>
+   
+    <script src="./../public/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script>
+    $('#timkiem').click(function(e) {
+        debugger;
+        var searchVal = $('#searchKey').val(); // Trà sữa
+        var href = "/nlcstocotoco/frontend/sanpham.php?page=danhsachsanpham_timkiem&searchKey=" + searchVal;
+        location.href = href; // Chuyển trang bằng JS
+    });
+
+    </script> 
 </body>
 </html>
 
@@ -178,7 +205,8 @@
         }
     }
 
-    if(isset($_POST['btnDongY'])){
+    if(isset($_POST['btnDongY']) && isset($_SESSION['cart'])  && ($_SESSION['cart'])!= null)
+    {
         if(isset($_SESSION['kh_taikhoan'])){
             foreach($_SESSION['cart'] as $key => $row){
                 $_SESSION['cart'][$key]['qty']=$_POST['SP'.$key];
@@ -192,3 +220,4 @@
         }
     }
 ?>
+

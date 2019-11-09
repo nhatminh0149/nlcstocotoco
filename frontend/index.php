@@ -48,8 +48,8 @@
                 
                     <li class="nav-item" style="margin-left: 20px;">
                         <form class="form-inline my-2 my-lg-0" method="get" action="#">
-                            <input class="form-control mr-sm-1" type="search" placeholder="Tìm kiếm" aria-label="Search" name="">
-                            <button class="btn btn-warning mr-sm-5"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <input class="form-control mr-sm-1" type="search" placeholder="Tìm kiếm" aria-label="Search" name="" id="searchKey">
+                            <button type="button" class="btn btn-warning mr-sm-5" id="timkiem" name="timkiem"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
                     </li>
 
@@ -234,22 +234,27 @@
                     <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
                         <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                        <i class="fa fa-facebook-f"></i>
+                            <i class="fa fa-facebook-official" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                        <i class="fa fa-twitter"></i>
+                            <i class="fa fa-twitter-square" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                        <i class="fa fa-google"></i>
+                            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                        <i class="fa fa-linkedin"></i>
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
                     </li>
                     </ul>
@@ -339,8 +344,21 @@
 
 
     <script src="./../public/vendor/jquery/jquery.min.js"></script>
-    <script src="./../public/vendor/popper/popper.min.js"></script>
+   
     <script src="./../public/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script>
+    $('#timkiem').click(function(e) {
+        debugger;
+        var searchVal = $('#searchKey').val(); // Trà sữa
+        var href = "/nlcstocotoco/frontend/sanpham.php?page=danhsachsanpham_timkiem&searchKey=" + searchVal;
+        location.href = href; // Chuyển trang bằng JS
+    });
+
+    </script>
+
+    
 
 </body>
 </html>

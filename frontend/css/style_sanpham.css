@@ -61,11 +61,22 @@ header a:hover {
 
 /* footer */
 footer{
-    background: linear-gradient(rgba(16,29,44,.60), rgba(16,29,44,.60)), url(/nlcstocotoco/public/img/background/footer.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(rgba(23, 23, 24, 0.85), rgba(30, 30, 31, 0.85)),
+            url(/nlcstocotoco/public/img/background/footer.jpg) center no-repeat;
     background-size: cover;
-    position: relative;
+}
+footer h6{
+    color: #d3b673;
+    font-family: 'Muli', sans-serif;
+}
+footer p{
+    color: #ebe8e3;
+    font-family: 'Muli', sans-serif;
+}
+footer i{
+    font-size: 21px;
+    color: #d3b673;
+    font-family: 'Muli', sans-serif;
 }
 
 

@@ -10,9 +10,12 @@
     $sqlSelectSanPham = <<<EOT
     SELECT sp.sp_ma, hsp.hsp_ma, hsp.hsp_tentaptin, sp.sp_ten, sp.sp_gia, sp.sp_mota, sp.lsp_ma
     FROM hinhsanpham hsp
-    JOIN  sanpham sp  ON sp.sp_ma=hsp.sp_ma
+    RIGHT JOIN  sanpham sp  ON sp.sp_ma=hsp.sp_ma
     WHERE sp.sp_ma = $sp_ma;
 EOT;
+
+    // print_r($sqlSelectSanPham);
+    // die;
 
     // Thực thi câu truy vấn SQL để lấy về dữ liệu ban đầu của record 
     $resultSelectSanPham = mysqli_query($conn, $sqlSelectSanPham);
@@ -84,11 +87,12 @@ EOT;
         font-size: 16px;
         font-weight: bold;
     }
-    .details .btnAdd{
+    /* .details .btnAdd{
         line-height: 40px;
-    }
-    .details a.btnAdd{
-        width: 150px;
+    } */
+    .details a.btnAdd, .details button.btnAdd{
+        /* width: 150px; */
+        line-height: 10px;
         padding: 10px;
         border: 1px solid #D3B673;
         color: whitesmoke;
@@ -98,7 +102,7 @@ EOT;
         font-size: 16px;
         font-weight: bold;
     }
-    .details a.btnAdd:hover{
+    .details a.btnAdd:hover,  .details button.btnAdd:hover{
         background: black;
         color: rgb(224, 186, 97);
         font-family: 'Muli', sans-serif;
@@ -166,7 +170,7 @@ EOT;
         
         <div class="khungchitiet">
             <div class="container-fluid">
-                <form name="formchitietsanpham" id="formchitietsanpham" method="post" action="themvaogiohang.php?sp_ma=<?php $sanphamRow['sp_ma']?>">
+                <form name="formchitietsanpham" id="formchitietsanpham" method="post" action="xulygiohang.php">
                     <input type="hidden" name="sp_ma" id="sp_ma" value="<?= $sanphamRow['sp_ma']?>" >
                     <input type="hidden" name="sp_ten" id="sp_ten" value="<?= $sanphamRow ['sp_ten']?>" >
                     <input type="hidden" name="sp_gia" id="sp_gia" value="<?= $sanphamRow ['sp_gia']?>" >
@@ -186,10 +190,13 @@ EOT;
                             <p class="product-price"><?php echo $sanphamRow['sp_gia_formated'] ?></p>
                             <p class="product-mota"><?php echo $sanphamRow['sp_mota'] ?></p>
                             <div class="form-group">
-                                <!-- <p class="soluong">Số lượng:</p>
-                                <input type="number" id="qty" name="qty" min="1"> -->
+                                <p class="soluong">Số lượng:</p>
+                                
+                                <input type="number" id="soluong" name="soluong" min="1">
                                 <br><br>
-                                <a href="xulygiohang.php?sp_ma=<?= $sanphamRow['sp_ma'] ?>" class="btnAdd" id="btnAdd"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 23px;"></i>&nbsp; Thêm vào giỏ hàng</a>
+                                <!-- <a href="xulygiohang.php?sp_ma=<?= $sanphamRow['sp_ma'] ?>&soluong=100" class="btnAdd" id="btnAdd"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 23px;"></i>&nbsp; Thêm vào giỏ hàng</a> -->
+
+                                <button id="addCart" name="addCart" class="btnAdd"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 23px;"></i>&nbsp; Thêm vào giỏ hàng</button>
                             </div>
                         </div>  
                     </div>

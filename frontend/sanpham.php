@@ -8,7 +8,7 @@
 
     if(isset($_SESSION['success'])){
         echo '<script>
-          alert("Bạn đã thêm 1 sản phẩm vào giỏ hàng. Hãy vào giỏ hàng của bạn để kiểm tra nhé!!!");
+          alert("Bạn đã thêm sản phẩm vào giỏ hàng. Hãy vào giỏ hàng của bạn để kiểm tra nhé!!!");
           window.location= "sanpham.php" ;
         </script>';
     }
@@ -59,8 +59,8 @@
                 
                     <li class="nav-item" style="margin-left: 20px;">
                         <form class="form-inline my-2 my-lg-0" method="get" action="#">
-                            <input class="form-control mr-sm-1" type="search" placeholder="Tìm kiếm" aria-label="Search" name="">
-                            <button class="btn btn-warning mr-sm-5"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <input class="form-control mr-sm-1" type="search" placeholder="Tìm kiếm" aria-label="Search" name="" id="searchKey">
+                            <button type="button" class="btn btn-warning mr-sm-5" id="timkiem" name="timkiem"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
                     </li>
 
@@ -107,6 +107,9 @@
                         //page loaisanpham
                         if($page == 'danhsachsanpham_all'){
                             include('danhsachsanpham/all.php');
+                        }
+                        else if($page == 'danhsachsanpham_timkiem'){
+                            include('danhsachsanpham/timkiem.php');
                         }
                     ?>
                 </div>
@@ -251,7 +254,18 @@
 
 </footer>
 <!-- End Footer -->
-
+    
+    <script src="./../public/vendor/jquery/jquery.min.js"></script>
     <script src="./../public/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+    $('#timkiem').click(function(e) {
+        debugger;
+        var searchVal = $('#searchKey').val(); // Trà sữa
+        var href = "/nlcstocotoco/frontend/sanpham.php?page=danhsachsanpham_timkiem&searchKey=" + searchVal;
+        location.href = href; // Chuyển trang bằng JS
+    });
+
+    </script>
 </body>
 </html>

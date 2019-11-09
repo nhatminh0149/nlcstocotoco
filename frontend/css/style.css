@@ -156,7 +156,7 @@ section{
     font-weight: bold;
 }
 .product .text-center a.btnToco:hover{
-    background: black;
+    background: white;
     color: rgb(224, 186, 97);
     font-family: 'Muli', sans-serif;
     font-weight: bold;
@@ -240,6 +240,17 @@ footer{
     background: linear-gradient(rgba(23, 23, 24, 0.85), rgba(30, 30, 31, 0.85)),
             url(/nlcstocotoco/public/img/background/footer.jpg) center no-repeat;
     background-size: cover;
+}
+footer h6{
+    color: #d3b673;
+    font-family: 'Muli', sans-serif;
+}
+footer p{
+    color: #ebe8e3;
+    font-family: 'Muli', sans-serif;
+}
+footer i{
+    font-size: 21px;
     color: #d3b673;
     font-family: 'Muli', sans-serif;
 }

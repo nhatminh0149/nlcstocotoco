@@ -20,11 +20,12 @@
     <?php
        
     //    B1: Lấy id của sp cần thêm vào giỏ hàng
-        $sp_ma = isset($_GET['sp_ma']) ? $_GET['sp_ma'] : '';
+        $sp_ma = isset($_POST['sp_ma']) ? $_POST['sp_ma'] : '';
+        $soluong = isset($_POST['soluong']) ? $_POST['soluong'] : '1';
 
         $sql= "SELECT sp.sp_ten, sp.sp_ma, sp.sp_gia, hsp.hsp_tentaptin
         FROM sanpham sp 
-        JOIN hinhsanpham hsp ON sp.sp_ma = hsp.sp_ma
+        LEFT JOIN hinhsanpham hsp ON sp.sp_ma = hsp.sp_ma
         WHERE sp.sp_ma = $sp_ma;";
         $result=mysqli_query($conn,$sql);
         $product = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -38,10 +39,10 @@
         if(isset($_SESSION['cart'])){
             //var_dump("Da ton tai gio hang");
             if(isset($_SESSION['cart'][$sp_ma])){
-                $_SESSION['cart'][$sp_ma]['qty'] += 1;
+                $_SESSION['cart'][$sp_ma]['qty'] += $soluong;
             }
             else{
-                $_SESSION['cart'][$sp_ma]['qty'] = 1;
+                $_SESSION['cart'][$sp_ma]['qty'] = $soluong;
             }
            
             $_SESSION['cart'][$sp_ma]['hsp_tentaptin'] = $product['hsp_tentaptin'];

@@ -3,30 +3,6 @@
     // 1. Include file cấu hình kết nối đến database, khởi tạo kết nối $conn
     require_once __DIR__ . '/../dbconnect.php'; 
 
-    // //nếu tài khoản đăng nhập kh có ton tại
-    // if(isset($_SESSION['kh_taikhoan'])){
-    //     // Lấy thông tin khách hàng
-    //     // Lấy dữ liệu người dùng đã đăng nhập từ SESSION
-    //     $kh_taikhoan = $_SESSION['kh_taikhoan'];
-    //     // Câu lệnh SELECT
-    //     $sql = "SELECT * FROM `khachhang` WHERE kh_taikhoan = '$kh_taikhoan';";
-
-    //     // Thực thi SELECT
-    //     $result = mysqli_query($conn, $sql);
-        
-    //     $dataKhachHang;
-    //     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-    //         $dataKhachHang = array(
-    //             'kh_taikhoan' => $row['kh_taikhoan'],
-    //             'kh_hoten' => $row['kh_hoten'],
-    //             'kh_diachi' => $row['kh_diachi'],
-    //             'kh_sdt' => $row['kh_sdt'],
-    //             'kh_email' => $row['kh_email'],
-    //         );
-    //         //  print_r($row);
-    //         // die;
-    //     }
-
         // Kiểm tra dữ liệu trong session
         if (isset($_SESSION['cart'])) {
             $_SESSION['cart'];
