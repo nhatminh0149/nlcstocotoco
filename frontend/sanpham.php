@@ -67,12 +67,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="danhsachgiohang.php"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 25px;"></i></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="khachhangdangnhap.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="khachhangdangxuat.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>
-                    </li>
+
+                    <?php
+                    if(isset($_SESSION['kh_taikhoan']) && $_SESSION['kh_taikhoan'] !=""){
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="khachhangdangxuat.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>
+                        </li>
+                    <?php
+                        }
+                    else {
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="khachhangdangnhap.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
+                        </li> 
+                    <?php
+                        }
+                    ?> 
                 </ul>
             </div>
         </nav>
@@ -91,9 +102,9 @@
                         <ul>
                             <li><a href="?danhsachsanpham_all">TẤT CẢ SẢN PHẨM</a></li>
                             <li><a href="">TRÀ SỮA</a></li>
-                            <li><a href="">CHÈ</a></li>
+                            <li><a href="">XUESHAN</a></li>
                             <li><a href="">FRESH FRUIT TEA</a></li>
-                            <li><a href="">MACCHIATO</a></li>
+                            <li><a href="">KEM PHÔ MAI</a></li>
                             <li><a href="">SPECIAL DRINK</a></li>
                         </ul>
                     </div>

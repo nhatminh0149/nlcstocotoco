@@ -56,12 +56,29 @@
                     <li class="nav-item">
                         <a class="nav-link" href="danhsachgiohang.php"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 25px;"></i></a>
                     </li>
-                    <li class="nav-item">
+             
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="khachhangdangnhap.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="khachhangdangxuat.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>
-                    </li>
+                    </li>  -->
+                    
+                    <?php
+                    if(isset($_SESSION['kh_taikhoan']) && $_SESSION['kh_taikhoan'] !=""){
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="khachhangdangxuat.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>
+                        </li>
+                    <?php
+                        }
+                    else {
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="khachhangdangnhap.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
+                        </li> 
+                    <?php
+                        }
+                    ?> 
+                     
+
                 </ul>
             </div>
         </nav>
