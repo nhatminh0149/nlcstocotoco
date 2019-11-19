@@ -11,7 +11,7 @@
     <h1>Thêm Khách Hàng Mới</h1> 
     <form id="themkh" name="themkh" method="post" action="">
         Tên tài khoản của KH: <input type="text" id="kh_taikhoan" name="kh_taikhoan" class="form-control"><br><br>
-        Mật khẩu của KH: <input type="text" id="kh_mk" name="kh_mk" class="form-control"><br><br>
+        Mật khẩu của KH: <input type="password" id="kh_mk" name="kh_mk" class="form-control"><br><br>
         Họ tên của KH: <input type="text" id="kh_hoten" name="kh_hoten" class="form-control"><br><br>
         SĐT của KH: <input type="text" id="kh_sdt" name="kh_sdt" class="form-control"><br><br>
         Địa chỉ của KH: <input type="text" id="kh_diachi" name="kh_diachi" class="form-control"><br><br>
@@ -26,7 +26,7 @@
     if(isset($_POST['tkh'])){
         //print_r('fgfdgd'); die;
         $kh_taikhoan=$_POST['kh_taikhoan'];
-        $kh_mk=$_POST['kh_mk'];
+        $kh_mk=md5($_POST['kh_mk']);
         $kh_hoten=$_POST['kh_hoten'];
         $kh_sdt=$_POST['kh_sdt'];
         $kh_diachi=$_POST['kh_diachi'];

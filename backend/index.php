@@ -15,7 +15,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Trang quản lý</title>
 
     <link rel="stylesheet" href="./../public/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="./../public/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -169,9 +169,12 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
     
     
     <script src="./../public/vendor/jquery/jquery.min.js"></script>
-    <script src="./../public/vendor/popper/popper.min.js"></script>
     <script src="./../public/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="./../public/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+    <!-- jQuery Validation được xây dựng giúp các lập trình viên có thể xác thực 
+    được những thông tin người dùng nhập vào Form một cách nhanh chóng và dễ dàng. -->
+
+    <!-- SỬ DỤNG SWEETALERT ĐỂ LÀM HỘP THOẠI ALERT CỦA JAVASCRIPT CÓ GIAO DIỆN SINH ĐỘNG-->
     
     <!-- Bat loi cac thuoc tinh -->
       <!-- Thêm : dùng jqueryvalidation để bắt lỗi -->

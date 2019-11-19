@@ -26,7 +26,6 @@ EOT;
     <thead>
         <tr>
             <th>Tài khoản của KH</th>
-            <th>Mật khẩu</th>
             <th>Họ tên</th>
             <th>SĐT</th>
             <th>Địa chỉ</th>
@@ -39,7 +38,6 @@ EOT;
         <?php foreach($data as $row) : ?>
         <tr>
             <td><?= $row['kh_taikhoan'] ?></td>
-            <td><?= sha1($row['kh_mk']) ?></td>
             <td><?= $row['kh_hoten'] ?></td>
             <td><?= $row['kh_sdt'] ?></td>
             <td><?= $row['kh_diachi'] ?></td>

@@ -95,12 +95,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/nlcstocotoco/frontend/danhsachgiohang.php"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 25px;"></i></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/nlcstocotoco/frontend/khachhangdangnhap.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/nlcstocotoco/frontend/khachhangdangxuat.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>
-                    </li>
+
+                    <?php
+                    if(isset($_SESSION['kh_taikhoan']) && $_SESSION['kh_taikhoan'] !=""){
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="khachhangdangxuat.php"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></i></a>
+                        </li>
+                    <?php
+                        }
+                    else {
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="khachhangdangnhap.php"><i class="fa fa-user" aria-hidden="true"  style="font-size: 25px;"></i></a>
+                        </li> 
+                    <?php
+                        }
+                    ?> 
+                    
                 </ul>
             </div>
         </nav>
@@ -134,11 +146,7 @@
                                 <?php else: ?>
                                         <img class="img" src="/nlcstocotoco/public/img/no_image.jpg" width="40px" height="40px" />
                                 <?php endif ?>
-                                
-                                
-                                
-                               
-                                
+                                   
                             </div>
                             <div class="col-md-2 text-center"><?php echo number_format($val['sp_gia'],2,",",".") ?></div>   
                             <div class="col-md-2 text-center"><input type='number' name='SP<?php echo $key ?>' readonly value='<?php echo $val['qty'] ?>' style='text-align: center; width: 50px;' min="1"; /></div>   

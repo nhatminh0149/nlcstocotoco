@@ -8,7 +8,7 @@ $(document).ready(function () {
             },
             kh_mk: {
                 required: true,
-                minlength: 8,
+                minlength: 3,
                 maxlength: 20
             },
             kh_hoten: {
@@ -41,7 +41,7 @@ $(document).ready(function () {
             },
             kh_mk: {
                 required: "Vui lòng nhập Mật khẩu của KH",
-                minlength: "Mật khẩu phải từ 8 kí tự",
+                minlength: "Mật khẩu phải từ 3 kí tự",
                 maxlength: "Mật khẩu không được vượt quá 20 kí tự"
             },
             kh_hoten: {

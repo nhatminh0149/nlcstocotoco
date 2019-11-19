@@ -132,6 +132,12 @@
                 		window.location= "khachhangdangky.php" ;
            			 </script>';
 			}
+			else if($_POST['kh_mk'] != $_POST['re_khmk']){
+				echo '<script>
+                		alert("Mật khẩu phải trùng nhau. Vui lòng nhập lại!!!");
+                		window.location= "khachhangdangky.php" ;
+           			 </script>';
+			}
 			else{
 				$sqlInsert = "INSERT INTO khachhang(kh_taikhoan, kh_mk, kh_hoten, kh_sdt, kh_diachi, kh_email) VALUES (N'$kh_taikhoan', N'$kh_mk', N'$kh_hoten', N'$kh_sdt', N'$kh_diachi', N'$kh_email');";
 				$resultInsert = mysqli_query($conn, $sqlInsert);

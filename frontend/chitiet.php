@@ -204,7 +204,7 @@ EOT;
                             <div class="form-group">
                                 <p class="soluong">Số lượng:</p>
                                 
-                                <input type="number" id="soluong" name="soluong" min="1">
+                                <input type="number" id="soluong" name="soluong" min="1" value="1">
                                 <br><br>
                                 <!-- <a href="xulygiohang.php?sp_ma=<?= $sanphamRow['sp_ma'] ?>&soluong=100" class="btnAdd" id="btnAdd"><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 23px;"></i>&nbsp; Thêm vào giỏ hàng</a> -->
 
